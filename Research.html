@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+</script>
+<div style='width: 1500px'>
+    <canvas id="myChart"></canvas>
+</div>
+<script>
+    var cty = document.getElementById('myChart');
+    var myChart = new Chart(cty, {
+        type: 'bar',
+        data:{
+            labels: ['West','Southwest', 'Midwest', 'Southeast', 'Northeast'],
+            datasets: [{
+                label: 'Covid Deaths',
+                data: [210148, 164975 , 246507, 337680, 243287],
+                backgroundColor: [
+                    'rgba(0, 0, 255)',
+                    'rgba(192, 192, 129)',
+                    'rgba(0, 0, 255, 0.2)',
+                    'rgba(255, 128, 0, 0.2)',
+                    'rgba(0, 255, 255)',
+                ],
+                
+                borderWidth: 5
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                },
+                x: {
+                    ticks: {
+                        stepSize: 10000
+                    }
+                }
+            },
+            indexAxis: 'y'
+        }
+    });
+</script>
+<div style='width: 1000px'>
+    <canvas id='myChart2'></canvas>
+</div>
+<script>
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+        type:'doughnut',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Brown'],
+            datasets: [{
+                label: 'My First Doughnut Today',
+                data:[100, 50, 100, 50, 50, 50],
+                backgroundColor:[
+                    'rgb(250, 0, 0)',
+                    'rgb(50, 150, 240)',
+                    'rgb(255, 200, 80)',
+                    'rgb(0, 255, 0)',
+                    'rgb(153, 0, 255)',
+                    'rgb(102, 51, 0)'
+                ],
+                hoverOffset: 1
+            }]
+        }
+    });
+</script>
+</body>
+</html>

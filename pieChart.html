@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<div style='width: 275px'>
+<canvas id='myChart'></canvas>
+</div>
+<script>
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+        type:'doughnut',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Brown'],
+            datasets: [{
+                label: 'My First Doughnut Today',
+                data:[100, 50, 100, 50, 50, 50],
+                backgroundColor:[
+                    'rgb(250, 0, 0)',
+                    'rgb(50, 150, 240)',
+                    'rgb(255, 200, 80)',
+                    'rgb(0, 255, 0)',
+                    'rgb(153, 0, 255)',
+                    'rgb(102, 51, 0)'
+                ],
+                hoverOffset: 1
+            }]
+        }
+    });
+</script>
+<div style='width: 275px'>
+<canvas id='myChart2'></canvas>
+</div>
+<script>
+    var cty = document.getElementById('myChart2');
+    var myChart = new Chart(cty, {
+        type:'pie',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow','Green', 'Purple', 'Brown'],
+            datasets: [{
+                label: 'My First Doughnut Today',
+                data:[200, 50, 200, 50, 50, 50],
+                backgroundColor:[
+                    'rgb(250, 0, 0)',
+                    'rgb(50, 150, 240)',
+                    'rgb(255, 200, 80)',
+                    'rgb(0, 255, 0)',
+                    'rgb(153, 0, 255)',
+                    'rgb(102, 51, 0)'
+                ],
+                hoverOffset: 1
+            }]
+        }
+    });
+</script>
+<div style='width: 275px'>
+    <canvas id="myChart3"></canvas>
+</div>
+<script>
+    var ctz = document.getElementById('myChart3');
+    var myChart = new Chart(ctz, {
+        type: 'polarArea',
+        data: {
+            labels: [
+                'Red', 'turqoise', 'Yellow', 'Grey', 'Blue', 'Green', 'Purple', 'Brown'
+            ],
+            datasets: [{
+                label: 'Polar Area Chart',
+                data: [11,10,15,3,2,14,10,16],
+                backgroundColor: [
+                    'rgba(250, 0, 0)',
+                    'rgba(80, 190, 190)',
+                    'rgba(255, 200, 85)',
+                    'rgba(201, 203, 130)',
+                    'rgba(50, 160, 240)',
+                    'rgb(0, 255, 0)',
+                    'rgb(153, 0, 255)',
+                    'rgb(102, 51, 0)'
+                ]
+            }]
+        },
+    });
+</script>
+</body>
+</html>
