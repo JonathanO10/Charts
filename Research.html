@@ -5,15 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <div style='width: 1500px'>
     <canvas id="myChart"></canvas>
 </div>
 <script>
-    var cty = document.getElementById('myChart');
-    var myChart = new Chart(cty, {
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
         type: 'bar',
         data:{
             labels: ['West','Southwest', 'Midwest', 'Southeast', 'Northeast'],
@@ -27,7 +25,7 @@
                     'rgba(255, 128, 0, 0.2)',
                     'rgba(0, 255, 255)',
                 ],
-                
+
                 borderWidth: 5
             }]
         },
@@ -46,29 +44,149 @@
         }
     });
 </script>
-<div style='width: 1000px'>
-    <canvas id='myChart2'></canvas>
+<canvas id="chart2"></canvas>
+<script>
+    var cty = document.getElementById('chart2');
+    var nextChart = new Chart(cty, {
+        type: 'scatter',
+        data: {
+            datasets:[{
+                label: 'West',
+                backgroundColor: 'rgba(255, 200, 50, 1)',
+                pointBackgroundColor: 'rgba(255, 200, 50, 1)',
+                pointRadius: 4,
+                data: [
+                    {x: 210148, y: 0},
+                ]
+            }, {
+                label: 'Southwest',
+                backgroundColor: 'rgba(50, 200, 50, 1)',
+                pointBackgroundColor: 'rgba(50, 200, 50, 1)',
+                pointRadius: 4,
+                data: [
+                    {x: 164975, y: 0},
+                ]
+            }, {
+                label: 'Midwest',
+                backgroundColor: 'rgba(0, 0, 0, 1)',
+                pointBackgroundColor: 'rgba(0, 0, 0, 1)',
+                pointRadius: 4,
+                data: [
+                    {x: 246507, y: 0},
+                ]
+            }, {
+                label: 'Southeast',
+                backgroundColor: 'rgba(255, 0, 0, 1)',
+                pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+                pointRadius: 4,
+                data: [
+                    {x: 337680, y: 0},
+                ]
+            }, {
+                label: 'Northeast',
+                backgroundColor: 'rgba(0, 0, 255, 1)',
+                pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+                pointRadius: 4,
+                data: [
+                    {x: 243287, y: 0},
+                ]
+            }
+            ]
+        },
+        options: {
+            scales: {
+                xAxis: {
+                    beginAtZero: true
+                },
+                yAxis: {
+                    beginAtZero: true
+                }
+            },x: {
+                ticks: {
+                    stepSize: 10000
+                }
+            },
+            plugins: {
+                title:{
+                    display: true,
+                    text: 'Deaths'
+                }
+            }
+        }
+    });
+</script>
+<div style='width: 400px'>
+    <canvas id='myChart3'></canvas>
 </div>
 <script>
-    var ctx = document.getElementById('myChart');
-    var myChart = new Chart(ctx, {
-        type:'doughnut',
+    var cta = document.getElementById('myChart3');
+    var myChart = new Chart(cta, {
+        type:'pie',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Brown'],
+            labels: ['West', 'Southwest', 'Midwest','Southeast', 'Northeast'],
             datasets: [{
                 label: 'My First Doughnut Today',
-                data:[100, 50, 100, 50, 50, 50],
+                data:[210148, 164975, 246507, 337680, 243287],
                 backgroundColor:[
                     'rgb(250, 0, 0)',
                     'rgb(50, 150, 240)',
                     'rgb(255, 200, 80)',
                     'rgb(0, 255, 0)',
                     'rgb(153, 0, 255)',
-                    'rgb(102, 51, 0)'
+
                 ],
                 hoverOffset: 1
             }]
         }
+    });
+</script>
+<div style='width: 400px'>
+    <canvas id='myChart4'></canvas>
+</div>
+<script>
+    var ctb = document.getElementById('myChart4');
+    var myChart = new Chart(ctb, {
+        type:'doughnut',
+        data: {
+            labels: ['West', 'Southwest', 'Midwest','Southeast', 'Northeast'],
+            datasets: [{
+                label: 'My First Doughnut Today',
+                data:[210148, 164975, 246507, 337680, 243287],
+                backgroundColor:[
+                    'rgb(250, 0, 0)',
+                    'rgb(50, 150, 240)',
+                    'rgb(255, 200, 80)',
+                    'rgb(0, 255, 0)',
+                    'rgb(153, 0, 255)',
+                ],
+                hoverOffset: 1
+            }]
+        }
+    });
+</script>
+<div style='width: 500px'>
+    <canvas id="myChart5"></canvas>
+</div>
+<script>
+    var ctc = document.getElementById('myChart5');
+    var myChart = new Chart(ctc, {
+        type: 'polarArea',
+        data: {
+            labels: [
+                'West', 'Southwest', 'Midwest','Southeast', 'Northeast'
+            ],
+            datasets: [{
+                label: 'Polar Area Chart',
+                data: [210148, 164975, 246507, 337680, 243287],
+                backgroundColor: [
+                    'rgba(250, 0, 0)',
+                    'rgba(80, 190, 190)',
+                    'rgba(255, 200, 85)',
+                    'rgba(201, 203, 130)',
+                    'rgba(50, 160, 240)',
+                ]
+            }]
+        },
     });
 </script>
 </body>
